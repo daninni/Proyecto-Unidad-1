@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proyecto;
 use Illuminate\Http\Request;
+use App\Services\UfService;
 
 class proyectoController extends Controller
 {
@@ -82,5 +83,13 @@ class proyectoController extends Controller
     {
         // Simulación: solo mensaje
         return view('proyectos.eliminar', compact('id'));
+    }
+
+    public function mostrarUf(UfService $ufService)
+    {
+        \Log::info('Entrando a mostrarUf en proyectoController');
+        $valorUf = $ufService->getUfHoy();
+        \Log::info('Respuesta de UfService:', ['valorUf' => $valorUf]);
+        return response()->json([$valorUf -> uf]);
     }
 }
