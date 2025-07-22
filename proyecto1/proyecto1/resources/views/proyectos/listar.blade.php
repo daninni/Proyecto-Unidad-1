@@ -23,5 +23,5 @@
             @endforeach
         </tbody>
     </table>
-    <a href="{{ url('/agregarProyecto') }}" class="btn btn-success">Crear Proyecto</a>
+    <a href="{{ url('/api/agregarProyecto') }}" class="btn btn-success">Crear Proyecto</a>
 @endsection
