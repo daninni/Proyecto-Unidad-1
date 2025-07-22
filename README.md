@@ -12,10 +12,12 @@
 Este proyecto es una aplicación Laravel que gestiona proyectos y consulta el valor de la UF del día.
 
 Versiones utilizadas
+```sh
 node: v18
 php: 8.2.28
 Apache: 2.4.54
 Laravel: 11.31
+```
 
 ## Creado con composer
    ```sh
