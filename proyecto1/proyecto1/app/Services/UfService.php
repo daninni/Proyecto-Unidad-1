@@ -10,14 +10,13 @@ class UfService
 {
     public function getUfHoy()
     {
-        // Ejemplo usando la API de mindicador.cl
         \Log::info('Llamando a la API externa de mindicador.cl');
         $response = Http::get('https://mindicador.cl/api');
         if (!$response->successful()) {
             return null;
         }
         $data = $response->json();
-       \Log::info('Respuesta HTTP', ['status' => $response->status(), 'body' => $response->body()]);
+        \Log::info('Respuesta HTTP', ['status' => $response->status(), 'body' => $response->body()]);
 
         return new Indicadores(
             version: $data['version'],
